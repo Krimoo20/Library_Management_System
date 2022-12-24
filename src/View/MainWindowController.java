@@ -60,7 +60,6 @@ public class MainWindowController implements Initializable {
              stage.setTitle(Title);
              stage.setScene(new Scene(parent));
              stage.show();
-             System.out.println("Hello world!!");
         } catch (IOException ex) {
               Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
           }
