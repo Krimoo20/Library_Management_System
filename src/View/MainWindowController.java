@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,11 +22,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -51,6 +55,7 @@ public class MainWindowController implements Initializable {
     private TextField memberIdInput;
     Connection conn = null; 
     PreparedStatement pst = null;
+    PreparedStatement pst2 = null;
     ResultSet rs=null;
         /**
      * Initializes the controller class.
@@ -107,7 +112,7 @@ public class MainWindowController implements Initializable {
     //looking for a member in the database using its ID and then display the name and the author of it is the main dashbored
     @FXML
     private void loadMemberInformation(ActionEvent event) {
-        clearBookCache();
+        //clearBookCache();
          String MName="";
         String CName="";
         String id=memberIdInput.getText();
@@ -133,7 +138,7 @@ public class MainWindowController implements Initializable {
     //looking for a Book in the database using its ID and then display the name and the author of it is the main dashbored
     @FXML
     private void loadBookInformation(ActionEvent event) {
-        clearBookCache();
+        //clearBookCache();
         String bName="not Available";
         String aName="not Availble";
         String id=bookIdInput.getText();
@@ -154,4 +159,31 @@ public class MainWindowController implements Initializable {
                Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
            }
           }
+
+    @FXML
+    private void IssueBook(ActionEvent event) {
+        Alert alter=new Alert(Alert.AlertType.CONFIRMATION);
+        alter.setTitle("Confirme issue operation");
+        alter.setHeaderText(null);
+        alter.setContentText("Are you sure to issue the book"+bookName.getText()+"\n to"+memberName.getText()+"?");
+        Optional<ButtonType>response=alter.showAndWait();   
+        if(response.get()==ButtonType.OK){
+            conn = dataBaseConnection.ConnectDb();
+            String query1="insert into issuedbook(bookID,memberID,renew_count)values(?,?,1)";
+            String queryUpadte="UPDATE `book` SET `Availble`='not Available' WHERE id='"+bookIdInput.getText()+"'";
+               try {
+            pst = (PreparedStatement)conn.prepareStatement(query1);
+            pst.setString(1, bookIdInput.getText());
+            pst.setString(2, memberIdInput.getText());
+            pst.execute();
+            pst2 =(PreparedStatement)conn.prepareStatement(queryUpadte);
+            pst2.execute();
+            conn.close();
+            JOptionPane.showMessageDialog(null, "The book has been issued sucessfully!!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        }
+        }
     }
+    

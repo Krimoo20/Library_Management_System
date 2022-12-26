@@ -166,7 +166,7 @@
                                     </HBox>
                                     <HBox alignment="CENTER" prefHeight="102.0" prefWidth="469.0">
                                        <children>
-                                          <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="71.0" text="Issue" />
+                                          <Button mnemonicParsing="false" onAction="#IssueBook" prefHeight="26.0" prefWidth="71.0" text="Issue" />
                                        </children>
                                        <VBox.margin>
                                           <Insets />

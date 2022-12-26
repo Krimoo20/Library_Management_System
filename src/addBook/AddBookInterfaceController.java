@@ -43,7 +43,7 @@ public class AddBookInterfaceController implements Initializable {
     @FXML
     public void addBook(ActionEvent event) {
         conn = dataBaseConnection.ConnectDb();
-        String sql = "insert into book (id,Title,Auther,Publisher)values(?,?,?,? )";
+        String sql = "insert into book (id,Title,Auther,Publisher,Availble)values(?,?,?,?,'Available')";
         try {
             pst =  (PreparedStatement)conn.prepareStatement(sql);
             pst.setString(1, ID.getText());

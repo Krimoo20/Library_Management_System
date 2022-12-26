@@ -47,6 +47,8 @@ public class ViewBookController implements Initializable {
     PreparedStatement pst=null;
     ResultSet rs=null;
     ObservableList <book> List = FXCollections.observableArrayList();
+    @FXML
+    private TableColumn<book, String> isAliveCol;
     /**
      * Initializes the controller class.
      */
@@ -65,6 +67,7 @@ public class ViewBookController implements Initializable {
         titleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
         authorCol.setCellValueFactory(new PropertyValueFactory<>("author"));
         publisherCol.setCellValueFactory(new PropertyValueFactory<>("publisher"));
+        isAliveCol.setCellValueFactory(new PropertyValueFactory<>("isAlive"));
         List=dataBaseConnection.getDatausers();
         viewingBook.setItems(List);
         connection.close();

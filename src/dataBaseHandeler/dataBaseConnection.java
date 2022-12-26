@@ -43,7 +43,7 @@ public class dataBaseConnection {
             ResultSet rs = ps.executeQuery();
             
             while (rs.next()){   
-                list.add(new book(rs.getString("id"), rs.getString("Title"), rs.getString("Auther"), rs.getString("Publisher")));               
+                list.add(new book(rs.getString("id"), rs.getString("Title"), rs.getString("Auther"), rs.getString("Publisher"),rs.getString("Availble")));               
             }
         } catch (Exception e) {
         }

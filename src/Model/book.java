@@ -9,16 +9,28 @@ package Model;
  * @author Abdelkarem Homidi
  */
 public class book {
-     String ID;
-    String title;
-    String author;
-    String publisher;
+    private String ID;
+    private String title;
+    private String author;
+    private String publisher;
+    private String isAlive;
+ 
 
-    public book(String ID, String title, String author, String publisher) {
+    public String getIsAlive() {
+        return isAlive;
+    }
+
+    public void setIsAlive(String isAlive) {
+        this.isAlive = isAlive;
+    }
+    
+
+    public book(String ID, String title, String author, String publisher,String isAlive) {
         this.ID = ID;
         this.title = title;
         this.author = author;
         this.publisher = publisher;
+        this.isAlive = isAlive;
     }
 
     public String getID() {
@@ -38,6 +50,7 @@ public class book {
     }
 
     public String getAuthor() {
+        
         return author;
     }
 
@@ -51,7 +64,5 @@ public class book {
 
     public void setPublisher(String publisher) {
         this.publisher = publisher;
-    }
-    
-    
+    }    
 }
