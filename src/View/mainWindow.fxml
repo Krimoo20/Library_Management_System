@@ -183,19 +183,19 @@
                            <children>
                               <BorderPane layoutX="147.0" layoutY="73.0" prefHeight="345.6" prefWidth="468.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <top>
-                                    <TextField prefHeight="0.0" prefWidth="469.0" promptText=" Enter Book ID" BorderPane.alignment="CENTER">
+                                    <TextField fx:id="bookId" onAction="#loadIssuedBook" prefHeight="0.0" prefWidth="469.0" promptText=" Enter Book ID" BorderPane.alignment="CENTER">
                                        <BorderPane.margin>
                                           <Insets bottom="20.0" left="80.0" right="80.0" top="20.0" />
                                        </BorderPane.margin>
                                     </TextField>
                                  </top>
                                  <center>
-                                    <ListView prefHeight="210.0" prefWidth="469.0" BorderPane.alignment="CENTER" />
+                                    <ListView fx:id="issueBookList" prefHeight="210.0" prefWidth="469.0" BorderPane.alignment="CENTER" />
                                  </center>
                                  <bottom>
                                     <HBox alignment="CENTER" prefHeight="65.0" prefWidth="469.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <Button mnemonicParsing="false" text="Submission" />
+                                          <Button mnemonicParsing="false" onAction="#loadSubmission" text="Submission" />
                                           <Button mnemonicParsing="false" text="Renew" />
                                        </children>
                                     </HBox>
