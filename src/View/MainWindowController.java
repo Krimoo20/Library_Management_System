@@ -262,5 +262,38 @@ public class MainWindowController implements Initializable {
         }
         
     }
+
+    @FXML
+    private void renewBook(ActionEvent event) {
+        if(!isReadyForSubmission){
+            Alert alter =new Alert(Alert.AlertType.ERROR);
+            alter.setTitle("Failed");
+            alter.setHeaderText(null);
+            alter.setContentText("Please select book to renew");
+            alter.showAndWait();
+            return;
+        }
+        Alert alter =new Alert(Alert.AlertType.CONFIRMATION);
+        alter.setTitle("Confirm renew operations");
+        alter.setHeaderText(null);
+        alter.setContentText("Are you sure to renew the book ?");
+        Optional<ButtonType>respone=alter.showAndWait();
+        if(respone.get()==ButtonType.OK){
+            String query1="UPDATE `issuedbook` SET `issueTime`=current_timestamp,`renew_count`= renew_count+1 WHERE bookID='"+bookId.getText()+"'";
+            conn=dataBaseConnection.ConnectDb();
+                 try {
+            pst = (PreparedStatement)conn.prepareStatement(query1);
+            pst.execute();
+            conn.close();
+            JOptionPane.showMessageDialog(null, "The book has been issued sucessfully!!");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
+        }
+        }
+            
+        }
+        
+        
     }
+    
     

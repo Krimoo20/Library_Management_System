@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="234.0" prefWidth="462.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19" fx:controller="logineInterface.LoginInterfaceViewController">
+    <stylesheets>
+        <URL value="@logininterfaceview.css" />
+    </stylesheets>
+   <children>
+      <Label alignment="CENTER" prefHeight="54.0" prefWidth="600.0" style="-fx-background-color: black; -fx-text-fill: white;" text="Login">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -23,7 +23,7 @@
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0">
          <top>
-            <MenuBar prefWidth="458.0" BorderPane.alignment="CENTER">
+            <MenuBar prefWidth="458.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
               <menus>
                 <Menu mnemonicParsing="false" text="File">
                   <items>
@@ -46,7 +46,7 @@
          <right>
             <VBox prefHeight="374.0" prefWidth="131.0" BorderPane.alignment="CENTER">
                <children>
-                      <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#addMember" prefHeight="120.0" prefWidth="133.0" text="Add Member">
+                      <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#addMember" prefHeight="120.0" prefWidth="133.0" styleClass="btn" stylesheets="@mainwindow.css" text="Add Member" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -54,8 +54,11 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addBook" prefHeight="120.0" prefWidth="133.0" text="Add Book">
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addBook" prefHeight="120.0" prefWidth="133.0" styleClass="btn" stylesheets="@mainwindow.css" text="Add Book" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -63,8 +66,11 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#showMemberTable" prefHeight="120.0" prefWidth="133.0" text="View Members">
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#showMemberTable" prefHeight="120.0" prefWidth="133.0" styleClass="btn" stylesheets="@mainwindow.css" text="View Members" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -72,8 +78,11 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onAction="#showBookTable" prefHeight="120.0" prefWidth="133.0" text="View Books">
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onAction="#showBookTable" prefHeight="120.0" prefWidth="133.0" styleClass="btn" stylesheets="@mainwindow.css" text="View Books" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -81,12 +90,15 @@
                            </image>
                         </ImageView>
                      </graphic>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
                   </Button>
                </children>
             </VBox>
          </right>
          <center>
-            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <TabPane prefHeight="200.0" prefWidth="200.0" stylesheets="@mainwindow.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
               <tabs>
                 <Tab text="Book Issue">
                   <content>
@@ -94,9 +106,9 @@
                            <children>
                               <VBox prefHeight="345.6" prefWidth="468.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <HBox fx:id="book_info" alignment="CENTER" prefHeight="106.0" prefWidth="469.0" style="-fx-background-color: #e7e7e7;">
+                                    <HBox fx:id="book_info" alignment="CENTER" prefHeight="108.0" prefWidth="429.0" style="-fx-background-color: #e7e7e7;">
                                        <children>
-                                          <TextField fx:id="bookIdInput" onAction="#loadBookInformation" prefHeight="26.0" prefWidth="219.0" promptText="Enter the book ID">
+                                          <TextField fx:id="bookIdInput" onAction="#loadBookInformation" prefHeight="26.0" prefWidth="200.0" promptText="Enter the book ID" styleClass="textfield" stylesheets="@mainwindow.css">
                                              <HBox.margin>
                                                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                                              </HBox.margin>
@@ -106,12 +118,12 @@
                                           </TextField>
                                           <VBox alignment="CENTER" prefHeight="106.0" prefWidth="290.0">
                                              <children>
-                                                <Text fx:id="bookName" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Name" textAlignment="CENTER" wrappingWidth="84.28668975830078">
+                                                <Text fx:id="bookName" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Name" textAlignment="CENTER" wrappingWidth="148.28668975830078">
                                                    <font>
                                                       <Font name="System Bold Italic" size="14.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="bookAuthor" strokeType="OUTSIDE" strokeWidth="0.0" text="Author" textAlignment="CENTER" wrappingWidth="53.886664390563965">
+                                                <Text fx:id="bookAuthor" strokeType="OUTSIDE" strokeWidth="0.0" text="Author" textAlignment="CENTER" wrappingWidth="148.28669333457947">
                                                    <font>
                                                       <Font name="System Bold Italic" size="14.0" />
                                                    </font>
@@ -129,9 +141,9 @@
                                           <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                                        </VBox.margin>
                                     </HBox>
-                                    <HBox fx:id="member_info" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="106.0" prefWidth="469.0" style="-fx-background-color: #e7e7e7;">
+                                    <HBox fx:id="member_info" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="114.0" prefWidth="429.0" style="-fx-background-color: #e7e7e7;">
                                        <children>
-                                          <TextField fx:id="memberIdInput" onAction="#loadMemberInformation" prefHeight="26.0" prefWidth="219.0" promptText="Enter the member ID">
+                                          <TextField fx:id="memberIdInput" onAction="#loadMemberInformation" prefHeight="26.0" prefWidth="221.0" promptText="Enter the member ID" styleClass="textfield" stylesheets="@mainwindow.css">
                                              <HBox.margin>
                                                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                                              </HBox.margin>
@@ -141,12 +153,12 @@
                                           </TextField>
                                           <VBox alignment="CENTER" prefHeight="106.0" prefWidth="290.0">
                                              <children>
-                                                <Text fx:id="memberName" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Name" textAlignment="CENTER" wrappingWidth="109.08673858642578">
+                                                <Text fx:id="memberName" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Name" textAlignment="CENTER" wrappingWidth="182.68677377700806">
                                                    <font>
                                                       <Font name="System Bold Italic" size="14.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="memberContact" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact" textAlignment="CENTER" wrappingWidth="53.886664390563965">
+                                                <Text fx:id="memberContact" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact" textAlignment="CENTER" wrappingWidth="170.6867127418518">
                                                    <font>
                                                       <Font name="System Bold Italic" size="14.0" />
                                                    </font>
@@ -166,7 +178,10 @@
                                     </HBox>
                                     <HBox alignment="CENTER" prefHeight="102.0" prefWidth="469.0">
                                        <children>
-                                          <Button mnemonicParsing="false" onAction="#IssueBook" prefHeight="26.0" prefWidth="71.0" text="Issue" />
+                                          <Button mnemonicParsing="false" onAction="#IssueBook" prefHeight="26.0" prefWidth="90.0" styleClass="btn" stylesheets="@../logineInterface/logininterfaceview.css" text="Issue" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                             </font></Button>
                                        </children>
                                        <VBox.margin>
                                           <Insets />
@@ -181,9 +196,9 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <BorderPane layoutX="147.0" layoutY="73.0" prefHeight="345.6" prefWidth="468.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <BorderPane layoutX="147.0" layoutY="73.0" prefHeight="345.6" prefWidth="468.8" styleClass="background" stylesheets="@mainwindow.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <top>
-                                    <TextField fx:id="bookId" onAction="#loadIssuedBook" prefHeight="0.0" prefWidth="469.0" promptText=" Enter Book ID" BorderPane.alignment="CENTER">
+                                    <TextField fx:id="bookId" onAction="#loadIssuedBook" prefHeight="0.0" prefWidth="469.0" promptText=" Enter Book ID" styleClass="textfield" stylesheets="@mainwindow.css" BorderPane.alignment="CENTER">
                                        <BorderPane.margin>
                                           <Insets bottom="20.0" left="80.0" right="80.0" top="20.0" />
                                        </BorderPane.margin>
@@ -195,8 +210,11 @@
                                  <bottom>
                                     <HBox alignment="CENTER" prefHeight="65.0" prefWidth="469.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <Button mnemonicParsing="false" onAction="#loadSubmission" text="Submission" />
-                                          <Button mnemonicParsing="false" text="Renew" />
+                                          <Button mnemonicParsing="false" onAction="#loadSubmission" text="Submission">
+                                             <HBox.margin>
+                                                <Insets right="30.0" />
+                                             </HBox.margin></Button>
+                                          <Button mnemonicParsing="false" onAction="#renewBook" prefWidth="100.0" text="Renew" />
                                        </children>
                                     </HBox>
                                  </bottom>
