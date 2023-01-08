@@ -34,6 +34,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javax.swing.JOptionPane;
+import javax.swing.plaf.RootPaneUI;
 
 /**
  * FXML Controller class
@@ -292,6 +293,19 @@ public class MainWindowController implements Initializable {
         }
             
         }
+
+    @FXML
+    private void closeHandel(ActionEvent event) {
+        //((Stage)rootPane.getScene().getWindow()).close();
+    }
+
+    @FXML
+    private void deletHandel(ActionEvent event) {
+    }
+
+    @FXML
+    private void handelHandel(ActionEvent event) {
+    }
         
         
     }

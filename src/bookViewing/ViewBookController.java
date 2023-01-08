@@ -21,6 +21,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import Model.book;
+import java.util.Optional;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -73,6 +79,36 @@ public class ViewBookController implements Initializable {
         connection.close();
         
     }
+
+    @FXML
+    private void deleteBook(ActionEvent event) {
+        book selected= viewingBook.getSelectionModel().getSelectedItem();
+        if(selected==null){
+        Alert alert =new Alert(Alert.AlertType.ERROR);
+        alert.setContentText("There is no book selected please select a book and try again!!");
+            return;
+        }
+        Alert alert =new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Deleting book");
+        alert.setContentText("Are you sure want to delete "+selected.getTitle()+"?");
+        Optional <ButtonType>answer=alert.showAndWait();
+        if(answer.get()==ButtonType.OK){
+             connection=dataBaseConnection.ConnectDb();
+             String query="delete from book where id=?";
+             try{
+             pst =  (PreparedStatement)connection.prepareStatement(query);
+             pst.setString(1, selected.getID());
+             pst.executeUpdate();
+             JOptionPane.showMessageDialog(null, "book has been deleted");
+             }catch(Exception e){
+                 JOptionPane.showMessageDialog(null, e);
+                 
+             }
+        }else{
+        Alert alert2 =new Alert(Alert.AlertType.ERROR);
+        alert2.setContentText("deletion cancelled");
+        }
+    }   
     
 }
  
