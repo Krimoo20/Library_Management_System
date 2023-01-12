@@ -286,6 +286,7 @@ public class MainWindowController implements Initializable {
             pst = (PreparedStatement)conn.prepareStatement(query1);
             pst.execute();
             conn.close();
+            updateSubmession();
             JOptionPane.showMessageDialog(null, "The book has been issued sucessfully!!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
@@ -293,6 +294,28 @@ public class MainWindowController implements Initializable {
         }
             
         }
+    private void updateSubmession(){
+        String bName="not Available";
+        String aName="not Availble";
+        String id=bookIdInput.getText();
+        String query="select * from book where id ='"+id+"'";
+        conn=dataBaseConnection.ConnectDb();
+           try {
+               pst = (PreparedStatement) conn.prepareStatement(query);
+               ResultSet rs = pst.executeQuery();
+               while(rs.next()){
+                    bName=rs.getString("Title");
+                    aName=rs.getString("Auther");
+                    bookName.setText(bName);
+                    bookAuthor.setText(aName);
+  
+            }
+               conn.close();
+           } catch (SQLException ex) {
+               Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
+           }
+        
+    }
 
     @FXML
     private void closeHandel(ActionEvent event) {

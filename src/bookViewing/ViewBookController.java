@@ -100,6 +100,7 @@ public class ViewBookController implements Initializable {
              pst.setString(1, selected.getID());
              pst.executeUpdate();
              JOptionPane.showMessageDialog(null, "book has been deleted");
+             loadData();
              }catch(Exception e){
                  JOptionPane.showMessageDialog(null, e);
                  
@@ -109,6 +110,10 @@ public class ViewBookController implements Initializable {
         alert2.setContentText("deletion cancelled");
         }
     }   
+
+    @FXML
+    private void editBook(ActionEvent event) {
+    }
     
 }
  

@@ -43,60 +43,6 @@
               </menus>
             </MenuBar>
          </top>
-         <right>
-            <VBox prefHeight="374.0" prefWidth="131.0" BorderPane.alignment="CENTER">
-               <children>
-                      <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#addMember" prefHeight="120.0" prefWidth="133.0" styleClass="btn" stylesheets="@mainwindow.css" text="Add Member" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../icons/addMember.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="14.0" />
-                     </font>
-                  </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addBook" prefHeight="120.0" prefWidth="133.0" styleClass="btn" stylesheets="@mainwindow.css" text="Add Book" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../icons/132220-200.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="14.0" />
-                     </font>
-                  </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#showMemberTable" prefHeight="120.0" prefWidth="133.0" styleClass="btn" stylesheets="@mainwindow.css" text="View Members" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../icons/4731383.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="14.0" />
-                     </font>
-                  </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onAction="#showBookTable" prefHeight="120.0" prefWidth="133.0" styleClass="btn" stylesheets="@mainwindow.css" text="View Books" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../icons/4731383.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="14.0" />
-                     </font>
-                  </Button>
-               </children>
-            </VBox>
-         </right>
          <center>
             <TabPane prefHeight="200.0" prefWidth="200.0" stylesheets="@mainwindow.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
               <tabs>
@@ -210,11 +156,17 @@
                                  <bottom>
                                     <HBox alignment="CENTER" prefHeight="65.0" prefWidth="469.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <Button mnemonicParsing="false" onAction="#loadSubmission" text="Submission">
+                                          <Button mnemonicParsing="false" onAction="#loadSubmission" styleClass="btnsub" stylesheets="@mainwindow.css" text="Submission" textFill="WHITE">
                                              <HBox.margin>
                                                 <Insets right="30.0" />
-                                             </HBox.margin></Button>
-                                          <Button mnemonicParsing="false" onAction="#renewBook" prefWidth="100.0" text="Renew" />
+                                             </HBox.margin>
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                             </font></Button>
+                                          <Button mnemonicParsing="false" onAction="#renewBook" prefWidth="100.0" styleClass="btnsub" stylesheets="@mainwindow.css" text="Renew" textFill="WHITE">
+                                             <font>
+                                                <Font name="Arial Rounded MT Bold" size="14.0" />
+                                             </font></Button>
                                        </children>
                                     </HBox>
                                  </bottom>
@@ -225,6 +177,60 @@
               </tabs>
             </TabPane>
          </center>
+         <left>
+            <VBox prefHeight="374.0" prefWidth="131.0" BorderPane.alignment="CENTER">
+               <children>
+                      <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#addMember" prefHeight="120.0" prefWidth="133.0" styleClass="btn" stylesheets="@mainwindow.css" text="Add Member" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/addMember.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addBook" prefHeight="120.0" prefWidth="133.0" styleClass="btn" stylesheets="@mainwindow.css" text="Add Book" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/132220-200.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#showMemberTable" prefHeight="120.0" prefWidth="133.0" styleClass="btn" stylesheets="@mainwindow.css" text="View Members" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/4731383.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onAction="#showBookTable" prefHeight="120.0" prefWidth="133.0" styleClass="btn" stylesheets="@mainwindow.css" text="View Books" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/4731383.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </left>
       </BorderPane>
    </children>
 </StackPane>

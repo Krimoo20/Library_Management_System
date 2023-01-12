@@ -11,14 +11,19 @@ import com.mysql.jdbc.PreparedStatement;
 import dataBaseHandeler.dataBaseConnection;
 import java.net.URL;
 import java.sql.ResultSet;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -64,6 +69,37 @@ public class MemberTableViewingController implements Initializable {
         numberCol.setCellValueFactory(new PropertyValueFactory<>("mobileNumber"));
         List=dataBaseConnection.getDataMembers();
         MemberViewing.setItems(List);
+    }
+
+    @FXML
+    private void deleteBook(ActionEvent event) {
+         Member selected= MemberViewing.getSelectionModel().getSelectedItem();
+        if(selected==null){
+        Alert alert =new Alert(Alert.AlertType.ERROR);
+        alert.setContentText("There is no member selected please select a member and try again!!");
+            return;
+        }
+        Alert alert =new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Deleting a Member");
+        alert.setContentText("Are you sure want to delete "+selected.getName()+"?");
+        Optional <ButtonType>answer=alert.showAndWait();
+        if(answer.get()==ButtonType.OK){
+             connection=dataBaseConnection.ConnectDb();
+             String query="delete from members where id=?";
+             try{
+             pst =  (PreparedStatement)connection.prepareStatement(query);
+             pst.setString(1, selected.getID());
+             pst.executeUpdate();
+             JOptionPane.showMessageDialog(null, "Member has been deleted");
+             loadData();
+             }catch(Exception e){
+                 JOptionPane.showMessageDialog(null, e);
+                 
+             }
+        }else{
+        Alert alert2 =new Alert(Alert.AlertType.ERROR);
+        alert2.setContentText("deletion cancelled");
+        }
     }
     
 }
