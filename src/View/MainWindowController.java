@@ -78,7 +78,7 @@ public class MainWindowController implements Initializable {
     } 
            @FXML
     void addBook(ActionEvent event) {
-        loadWindow("addBook/addBookInterface.fxml","Add member");
+        loadWindow("addBook/addBookInterface.fxml","Add Book");
     }
 
     @FXML
@@ -88,13 +88,13 @@ public class MainWindowController implements Initializable {
 
     @FXML
     void showBookTable(ActionEvent event) {
-        loadWindow("bookViewing/viewBook.fxml","Add member");
+        loadWindow("bookViewing/viewBook.fxml","Viewing Books");
 
     }
 
     @FXML
     void showMemberTable(ActionEvent event) {
-        loadWindow("memberViewing/memberTableViewing.fxml","Add member");
+        loadWindow("memberViewing/memberTableViewing.fxml","Viewing Member");
 
     }
    

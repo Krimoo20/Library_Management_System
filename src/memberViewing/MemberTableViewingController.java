@@ -6,23 +6,33 @@ package memberViewing;
 
 import Model.Member;
 import Model.book;
+import View.MainWindowController;
+import bookViewing.EditBookController;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import dataBaseHandeler.dataBaseConnection;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javax.swing.JOptionPane;
 
 /**
@@ -70,10 +80,10 @@ public class MemberTableViewingController implements Initializable {
         List=dataBaseConnection.getDataMembers();
         MemberViewing.setItems(List);
     }
-
+    
     @FXML
-    private void deleteBook(ActionEvent event) {
-         Member selected= MemberViewing.getSelectionModel().getSelectedItem();
+    private void deletMember(ActionEvent event) {
+               Member selected= MemberViewing.getSelectionModel().getSelectedItem();
         if(selected==null){
         Alert alert =new Alert(Alert.AlertType.ERROR);
         alert.setContentText("There is no member selected please select a member and try again!!");
@@ -100,6 +110,33 @@ public class MemberTableViewingController implements Initializable {
         Alert alert2 =new Alert(Alert.AlertType.ERROR);
         alert2.setContentText("deletion cancelled");
         }
+    }
+
+    @FXML
+    private void EditMember(ActionEvent event) {
+         Member selected= MemberViewing.getSelectionModel().getSelectedItem();
+        if(selected==null){
+        Alert alert =new Alert(Alert.AlertType.ERROR);
+        alert.setContentText("There is no book selected please select a book and try again!!");
+            return;
+        }
+         try{
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("editMember.fxml"));
+             
+            Parent parentt;
+            parentt = loader.load();
+             
+             EditMemberController controller=loader.getController();
+             controller.infoEdit(selected);
+             Stage stage=new Stage(StageStyle.DECORATED);
+             stage.setTitle("Edit Member");
+             stage.setScene(new Scene(parentt));
+             stage.show();
+             
+        } catch (IOException ex) {
+              Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
+          }
+        
     }
     
 }

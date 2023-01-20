@@ -29,7 +29,7 @@ public class mainWindow extends Application {
          stage.show();
         */
         
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("mainWindow.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("loginInterface.fxml"));
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);      
         stage.setScene(scene);

@@ -1,0 +1,27 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.linear-grad{
+    -fx-background-color:linear-gradient(to bottom left,#6f4cbb,#431FA0);   
+}
+.btn1{
+    -fx-background-color:#6F4CBB;
+    -fx-text-fill:#ffffff;
+}
+.btn1:hover{
+    -fx-text-fill:#431FA0;
+}
+.textfield{
+    -fx-background-color:transparent;
+    -fx-text-inner-color:black;
+    -fx-border-color:gray;
+    -fx-border-width:0px 0px .4px 0px;
+    -fx-font-size:13px;
+}
+
+.textfield:focused{
+    -fx-border-width:0px 0px 1px 0px;
+    -fx-border-color:#8146D1;
+}
+

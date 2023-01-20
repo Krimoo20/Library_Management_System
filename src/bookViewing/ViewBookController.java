@@ -23,10 +23,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import Model.book;
+import View.MainWindowController;
+import java.io.IOException;
 import java.util.Optional;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javax.swing.JOptionPane;
+import bookViewing.EditBookController;
 
 /**
  * FXML Controller class
@@ -35,7 +43,7 @@ import javax.swing.JOptionPane;
  */
 public class ViewBookController implements Initializable {
      @FXML
-    private TableColumn<book,String> authorCol;
+    public TableColumn<book,String> authorCol;
 
     @FXML
     private TableColumn<book, String> idCol;
@@ -67,7 +75,7 @@ public class ViewBookController implements Initializable {
          }
     }    
 
-    private void loadData() throws SQLException {
+     private void loadData() throws SQLException {
         connection=dataBaseConnection.ConnectDb();
         idCol.setCellValueFactory(new PropertyValueFactory<>("ID"));
         titleCol.setCellValueFactory(new PropertyValueFactory<>("title"));
@@ -112,8 +120,31 @@ public class ViewBookController implements Initializable {
     }   
 
     @FXML
-    private void editBook(ActionEvent event) {
+    private void editBook(ActionEvent event) throws SQLException {
+        book selected= viewingBook.getSelectionModel().getSelectedItem();
+        if(selected==null){
+        Alert alert =new Alert(Alert.AlertType.ERROR);
+        alert.setContentText("There is no book selected please select a book and try again!!");
+            return;
+        }
+         try{
+            FXMLLoader loader=new FXMLLoader(getClass().getResource("editBook.fxml"));
+             
+            Parent parentt;
+            parentt = loader.load();
+             
+             EditBookController controller=loader.getController();
+             controller.infoEdit(selected);
+             Stage stage=new Stage(StageStyle.DECORATED);
+             stage.setTitle("Edit Book");
+             stage.setScene(new Scene(parentt));
+             stage.show();
+             
+        } catch (IOException ex) {
+              Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
+          }
+        }
     }
     
-}
+
  
