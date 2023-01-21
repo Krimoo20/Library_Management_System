@@ -88,7 +88,7 @@
             </HBox>
          </children>
       </VBox>
-      <Label layoutX="100.0" text="ADD A NEW MEMBER" textFill="#519939">
+      <Label layoutX="115.0" text="EDIT A MEMBER" textFill="#6f4cbb">
          <font>
             <Font name="Arial Rounded MT Bold" size="25.0" />
          </font>

@@ -2,17 +2,26 @@
  * Empty Stylesheet file.
  */ 
 .btn{
-    -fx-background-color:#1083E8;
+    -fx-background-color:#6F4CBB;
+    
 }
 
-.btn:hover{
-    -fx-background-color:#388E3C;
+.action{
+    -fx-background-color:#6F4CBB;
+    -fx-background-radius: 20px;
 }
 .textfield{
     -fx-background-color:transparent;
-    -fx-text-inner-color:black;
-    -fx-border-color:gray;
-    -fx-border-width:0px 0px .4px 0px;
+    -fx-text-inner-color:white;
+    -fx-border-color:white;
+    -fx-border-width:0px 0px 1px 0px;
+    -fx-font-size:13px;
+}
+.textFiled2{
+    -fx-background-color:transparent;
+    -fx-text-inner-color:gray;
+    -fx-border-color:black;
+    -fx-border-width:0px 0px 1px 0px;
     -fx-font-size:13px;
 }
 .background{
@@ -27,10 +36,20 @@
     -fx-cursor:hand;
 }
 
-.btnsub{
-    -fx-background-color:#1083E8;
-}
 
 .btnsub:hover{
     -fx-background-color:#388E3C;
 }
+.background-pan{
+    -fx-background-color:#6F4CBB;
+}
+.tab-label {
+    -fx-text-fill: white;
+     -fx-font-weight: bold;
+}
+.information{
+    -fx-background-color:#6F4CBB;
+    -fx-background-radius: 20px;
+}
+
+

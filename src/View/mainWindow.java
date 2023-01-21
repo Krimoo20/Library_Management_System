@@ -19,6 +19,7 @@ import javafx.stage.Stage;
  * @author Abdelkarem Homidi
  */
 public class mainWindow extends Application {
+    public static Stage stage1=null;
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -33,6 +34,7 @@ public class mainWindow extends Application {
         Parent root = fxmlLoader.load();
         Scene scene = new Scene(root);      
         stage.setScene(scene);
+        stage1=stage;
         stage.show();
          
     }

@@ -4,6 +4,7 @@
  */
 package View;
 
+import static View.mainWindow.stage1;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import dataBaseHandeler.dataBaseConnection;
@@ -62,7 +63,7 @@ public class LoginInterfaceController implements Initializable {
     }    
 
     @FXML
-    private void loginAccount(ActionEvent event) {
+    private void loginAccount(ActionEvent event)throws IOException,Exception {
         String inputUser=username.getText();
         String inputPassword=password.getText();
         String userdata=null;
@@ -91,15 +92,6 @@ public class LoginInterfaceController implements Initializable {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
-       /*
-       System.out.println(inputUser == userdata);
-        System.out.println(inputPassword == passworddata);
-         System.out.println(inputUser);
-          System.out.println(inputPassword);
-          System.out.println(userdata);
-          System.out.println(passworddata);
-*/
-       
        
         if(inputUser.equals(userdata)&& inputPassword.equals(passworddata)){
              try{
@@ -108,6 +100,8 @@ public class LoginInterfaceController implements Initializable {
              stage.setTitle("mainDashborad");
              stage.setScene(new Scene(parent));
              stage.show();
+                stage1.close();
+             
         } catch (IOException ex) {
               Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
           }
@@ -119,8 +113,7 @@ public class LoginInterfaceController implements Initializable {
          part2.setVisible(true);
          timeline2.play(); 
        }
-    }
-    
+    } 
     
 
 }

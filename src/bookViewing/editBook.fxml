@@ -85,7 +85,7 @@
             </HBox>
          </children>
       </VBox>
-      <Label layoutX="135.0" prefHeight="42.0" prefWidth="168.0" text="EDIT A BOOK" textFill="#519939">
+      <Label layoutX="135.0" prefHeight="42.0" prefWidth="168.0" text="EDIT A BOOK" textFill="#6f4cbb">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>

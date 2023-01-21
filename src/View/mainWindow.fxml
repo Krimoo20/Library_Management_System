@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -14,14 +16,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainWindowController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="848.0" styleClass="mainFxmlClass" stylesheets="@../logineInterface/logininterfaceview.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MainWindowController">
    <children>
-      <BorderPane prefHeight="200.0" prefWidth="200.0">
+      <BorderPane prefHeight="200.0" prefWidth="200.0" styleClass="background" stylesheets="@mainwindow.css">
          <top>
             <MenuBar prefWidth="458.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
               <menus>
@@ -44,15 +47,15 @@
             </MenuBar>
          </top>
          <center>
-            <TabPane prefHeight="200.0" prefWidth="200.0" stylesheets="@mainwindow.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
+            <TabPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="200.0" styleClass="background" stylesheets="@mainwindow.css" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
               <tabs>
-                <Tab text="Book Issue">
+                <Tab style="-fx-background-color: #6F4CBB;" text="Book Issue">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
-                              <VBox prefHeight="345.6" prefWidth="468.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <VBox prefHeight="345.6" prefWidth="468.8" styleClass="background" stylesheets="@../logineInterface/logininterfaceview.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <children>
-                                    <HBox fx:id="book_info" alignment="CENTER" prefHeight="108.0" prefWidth="429.0" style="-fx-background-color: #e7e7e7;">
+                                    <HBox fx:id="book_info" alignment="CENTER" prefHeight="108.0" prefWidth="429.0" styleClass="information" stylesheets="@mainwindow.css">
                                        <children>
                                           <TextField fx:id="bookIdInput" onAction="#loadBookInformation" prefHeight="26.0" prefWidth="200.0" promptText="Enter the book ID" styleClass="textfield" stylesheets="@mainwindow.css">
                                              <HBox.margin>
@@ -64,12 +67,12 @@
                                           </TextField>
                                           <VBox alignment="CENTER" prefHeight="106.0" prefWidth="290.0">
                                              <children>
-                                                <Text fx:id="bookName" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Name" textAlignment="CENTER" wrappingWidth="148.28668975830078">
+                                                <Text fx:id="bookName" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Name" textAlignment="CENTER" wrappingWidth="148.28668975830078">
                                                    <font>
                                                       <Font name="System Bold Italic" size="14.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="bookAuthor" strokeType="OUTSIDE" strokeWidth="0.0" text="Author" textAlignment="CENTER" wrappingWidth="148.28669333457947">
+                                                <Text fx:id="bookAuthor" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Author" textAlignment="CENTER" wrappingWidth="148.28669333457947">
                                                    <font>
                                                       <Font name="System Bold Italic" size="14.0" />
                                                    </font>
@@ -87,7 +90,7 @@
                                           <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                                        </VBox.margin>
                                     </HBox>
-                                    <HBox fx:id="member_info" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="114.0" prefWidth="429.0" style="-fx-background-color: #e7e7e7;">
+                                    <HBox fx:id="member_info" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="114.0" prefWidth="429.0" styleClass="information" stylesheets="@mainwindow.css">
                                        <children>
                                           <TextField fx:id="memberIdInput" onAction="#loadMemberInformation" prefHeight="26.0" prefWidth="221.0" promptText="Enter the member ID" styleClass="textfield" stylesheets="@mainwindow.css">
                                              <HBox.margin>
@@ -99,12 +102,12 @@
                                           </TextField>
                                           <VBox alignment="CENTER" prefHeight="106.0" prefWidth="290.0">
                                              <children>
-                                                <Text fx:id="memberName" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Name" textAlignment="CENTER" wrappingWidth="182.68677377700806">
+                                                <Text fx:id="memberName" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Name" textAlignment="CENTER" wrappingWidth="182.68677377700806">
                                                    <font>
                                                       <Font name="System Bold Italic" size="14.0" />
                                                    </font>
                                                 </Text>
-                                                <Text fx:id="memberContact" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact" textAlignment="CENTER" wrappingWidth="170.6867127418518">
+                                                <Text fx:id="memberContact" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Contact" textAlignment="CENTER" wrappingWidth="170.6867127418518">
                                                    <font>
                                                       <Font name="System Bold Italic" size="14.0" />
                                                    </font>
@@ -122,9 +125,9 @@
                                           <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                                        </VBox.margin>
                                     </HBox>
-                                    <HBox alignment="CENTER" prefHeight="102.0" prefWidth="469.0">
+                                    <HBox alignment="CENTER" prefHeight="108.0" prefWidth="562.0">
                                        <children>
-                                          <Button mnemonicParsing="false" onAction="#IssueBook" prefHeight="26.0" prefWidth="90.0" styleClass="btn" stylesheets="@../logineInterface/logininterfaceview.css" text="Issue" textFill="WHITE">
+                                          <Button mnemonicParsing="false" onAction="#IssueBook" prefHeight="26.0" prefWidth="90.0" styleClass="action" stylesheets="@../logineInterface/logininterfaceview.css" text="Issue" textFill="WHITE">
                                              <font>
                                                 <Font name="Arial Rounded MT Bold" size="14.0" />
                                              </font></Button>
@@ -135,19 +138,26 @@
                                     </HBox>
                                  </children>
                               </VBox>
-                           </children></AnchorPane>
+                           </children>
+                           <padding>
+                              <Insets top="60.0" />
+                           </padding></AnchorPane>
                   </content>
                 </Tab>
-                <Tab text="Renew/submission">
+                <Tab style="-fx-background-color: #6F4CBB;" text="Renew/submission">
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                            <children>
                               <BorderPane layoutX="147.0" layoutY="73.0" prefHeight="345.6" prefWidth="468.8" styleClass="background" stylesheets="@mainwindow.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <top>
-                                    <TextField fx:id="bookId" onAction="#loadIssuedBook" prefHeight="0.0" prefWidth="469.0" promptText=" Enter Book ID" styleClass="textfield" stylesheets="@mainwindow.css" BorderPane.alignment="CENTER">
+                                    <TextField fx:id="bookId" onAction="#loadIssuedBook" prefHeight="0.0" prefWidth="469.0" promptText=" Enter Book ID" stylesheets="@mainwindow.css" BorderPane.alignment="CENTER">
                                        <BorderPane.margin>
                                           <Insets bottom="20.0" left="80.0" right="80.0" top="20.0" />
                                        </BorderPane.margin>
+                                       <styleClass>
+                                          <String fx:value="textfield" />
+                                          <String fx:value="textFiled2" />
+                                       </styleClass>
                                     </TextField>
                                  </top>
                                  <center>
@@ -156,14 +166,14 @@
                                  <bottom>
                                     <HBox alignment="CENTER" prefHeight="65.0" prefWidth="469.0" BorderPane.alignment="CENTER">
                                        <children>
-                                          <Button mnemonicParsing="false" onAction="#loadSubmission" styleClass="btnsub" stylesheets="@mainwindow.css" text="Submission" textFill="WHITE">
+                                          <Button mnemonicParsing="false" onAction="#loadSubmission" prefHeight="27.0" prefWidth="114.0" styleClass="action" stylesheets="@mainwindow.css" text="Submission" textFill="WHITE">
                                              <HBox.margin>
                                                 <Insets right="30.0" />
                                              </HBox.margin>
                                              <font>
                                                 <Font name="Arial Rounded MT Bold" size="14.0" />
                                              </font></Button>
-                                          <Button mnemonicParsing="false" onAction="#renewBook" prefWidth="100.0" styleClass="btnsub" stylesheets="@mainwindow.css" text="Renew" textFill="WHITE">
+                                          <Button mnemonicParsing="false" onAction="#renewBook" prefHeight="27.0" prefWidth="118.0" styleClass="action" stylesheets="@mainwindow.css" text="Renew" textFill="WHITE">
                                              <font>
                                                 <Font name="Arial Rounded MT Bold" size="14.0" />
                                              </font></Button>
@@ -175,60 +185,101 @@
                   </content>
                 </Tab>
               </tabs>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
             </TabPane>
          </center>
          <left>
-            <VBox prefHeight="374.0" prefWidth="131.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="525.0" prefWidth="286.0" styleClass="background" stylesheets="@mainwindow.css" BorderPane.alignment="CENTER">
                <children>
-                      <Button contentDisplay="TOP" mnemonicParsing="false" onAction="#addMember" prefHeight="120.0" prefWidth="133.0" styleClass="btn" stylesheets="@mainwindow.css" text="Add Member" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                  <Pane prefHeight="130.0" prefWidth="286.0" styleClass="background-pan" stylesheets="@mainwindow.css">
+                     <children>
+                        <Label layoutX="86.0" layoutY="40.0" prefHeight="33.0" prefWidth="190.0" text="Boom Knowledge " textFill="WHITE">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="49.0" fitWidth="51.0" layoutX="22.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/addMember.png" />
+                              <Image url="@../icons/world-book-day.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                      <Button mnemonicParsing="false" onAction="#addMember" prefHeight="120.0" prefWidth="294.0" styleClass="btn" stylesheets="@mainwindow.css" text="Add Member" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets right="35.0" />
+                     </padding>
+                     <graphic>
+                        <ImageView fitHeight="49.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/add%20(1).png" />
                            </image>
                         </ImageView>
                      </graphic>
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="14.0" />
-                     </font>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addBook" prefHeight="120.0" prefWidth="133.0" styleClass="btn" stylesheets="@mainwindow.css" text="Add Book" textFill="WHITE">
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addBook" prefHeight="120.0" prefWidth="296.0" styleClass="btn" stylesheets="@mainwindow.css" text="Add Book" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
                      <graphic>
-                        <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="49.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/132220-200.png" />
+                              <Image url="@../icons/book%20(2).png" />
                            </image>
                         </ImageView>
                      </graphic>
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="14.0" />
-                     </font>
+                     <padding>
+                        <Insets right="50.0" />
+                     </padding>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#showMemberTable" prefHeight="120.0" prefWidth="133.0" styleClass="btn" stylesheets="@mainwindow.css" text="View Members" textFill="WHITE">
+                  <Button layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#showMemberTable" prefHeight="120.0" prefWidth="301.0" styleClass="btn" stylesheets="@mainwindow.css" text="View Members" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets right="35.0" />
+                     </padding>
                      <graphic>
-                        <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="47.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/4731383.png" />
+                              <Image url="@../icons/group.png" />
                            </image>
                         </ImageView>
                      </graphic>
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="14.0" />
-                     </font>
                   </Button>
-                  <Button contentDisplay="TOP" layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onAction="#showBookTable" prefHeight="120.0" prefWidth="133.0" styleClass="btn" stylesheets="@mainwindow.css" text="View Books" textFill="WHITE">
+                  <Button layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onAction="#showBookTable" prefHeight="120.0" prefWidth="293.0" styleClass="btn" stylesheets="@mainwindow.css" text="View Books" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="18.0" />
+                     </font>
+                     <padding>
+                        <Insets right="50.0" />
+                     </padding>
                      <graphic>
-                        <ImageView fitHeight="31.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="50.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../icons/4731383.png" />
+                              <Image url="@../icons/search.png" />
                            </image>
                         </ImageView>
                      </graphic>
-                     <font>
-                        <Font name="Arial Rounded MT Bold" size="14.0" />
-                     </font>
                   </Button>
                </children>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
             </VBox>
          </left>
       </BorderPane>
