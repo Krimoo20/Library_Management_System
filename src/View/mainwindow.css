@@ -35,6 +35,9 @@
     -fx-background-color:transparent;
     -fx-cursor:hand;
 }
+.close:hover{
+    -fx-background-color:#ed3528;
+}
 
 
 .btnsub:hover{

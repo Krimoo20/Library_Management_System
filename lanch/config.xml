@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>C:\Projet\libraryManagementSystem\dist\libraryManagementSystem.jar</jar>
+  <outfile>C:\Projet\libraryManagementSystem\dist\libraryManagementSystem.exe</outfile>
+  <errTitle>Please install java first !!</errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>https://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\Projet\libraryManagementSystem\src\icons\world-book-day.ico</icon>
+  <singleInstance>
+    <mutexName>librarySystem</mutexName>
+    <windowTitle>librarySystem</windowTitle>
+  </singleInstance>
+  <jre>
+    <path>C:\Projet\libraryManagementSystem\dist</path>
+    <requiresJdk>false</requiresJdk>
+    <requires64Bit>false</requires64Bit>
+    <minVersion>1.8.0</minVersion>
+    <maxVersion></maxVersion>
+  </jre>
+  <versionInfo>
+    <fileVersion>1.0.0.0</fileVersion>
+    <txtFileVersion>1.0.0 .0</txtFileVersion>
+    <fileDescription>Library Management System</fileDescription>
+    <copyright>NIL</copyright>
+    <productVersion>1.0.0.0</productVersion>
+    <txtProductVersion>1.0.0.0</txtProductVersion>
+    <productName>Boom Knowledge</productName>
+    <companyName>UEMF</companyName>
+    <internalName>Boom Knowledge</internalName>
+    <originalFilename>Boom Knowledge.exe</originalFilename>
+    <trademarks></trademarks>
+    <language>ENGLISH_US</language>
+  </versionInfo>
+</launch4jConfig>

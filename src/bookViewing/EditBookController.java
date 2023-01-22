@@ -22,6 +22,7 @@ import java.util.logging.Logger;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -48,6 +49,10 @@ public class EditBookController implements Initializable {
     private TextField Publisher;
     Connection conn =null;
     PreparedStatement pst = null;
+    @FXML
+    private Button miniButton;
+    @FXML
+    private Button closeButton;
     
     
 
@@ -66,7 +71,7 @@ public class EditBookController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
+    //this methode is called when the user clicks on the "Save" button it Modoify the information of a book already exisite in the database and then affect these changes to it
     @FXML
     private void saveModification(ActionEvent event) {
         conn = dataBaseConnection.ConnectDb();
@@ -92,6 +97,16 @@ public class EditBookController implements Initializable {
 
     @FXML
     private void cancelModification(ActionEvent event) {
+    }
+       @FXML
+    private void closeWindow(ActionEvent event) {
+        javafx.application.Platform.exit();
+    }
+
+    @FXML
+    private void minimizeWindow(ActionEvent event) {
+         Stage stage=(Stage)miniButton.getScene().getWindow();
+        stage.setIconified(true);
     }
     
 }

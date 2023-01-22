@@ -3,6 +3,7 @@
  */
 .mainFrame{
     -fx-background-color:white;
+    -fx-background-radius: 20px;
 }
 
 .close{
@@ -25,7 +26,7 @@
 
 .textfield{
     -fx-background-color:transparent;
-    -fx-text-inner-color:white;
+    -fx-text-inner-color:black;
     -fx-border-color:#6f4cbb;
     -fx-border-width:0px 0px 1px 0px;
     -fx-font-size:13px;

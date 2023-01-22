@@ -12,7 +12,9 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
 /**
@@ -32,6 +34,10 @@ public class EditMemberController implements Initializable {
     private TextField mobile;
     Connection conn =null;
     PreparedStatement pst = null;
+    @FXML
+    private Button miniButton;
+    @FXML
+    private Button closeButton;
     /**
      * Initializes the controller class.
      */
@@ -46,7 +52,7 @@ public class EditMemberController implements Initializable {
         mobile.setText(Integer.toString(member.getMobileNumber()));
         
     }
-
+    //this methode is called when the user clicks on the "Save" button it Modoify the information of a book already exisite in the database and then affect these changes to it
     @FXML
     private void saveModification(ActionEvent event) {
           conn = dataBaseConnection.ConnectDb();
@@ -70,6 +76,16 @@ public class EditMemberController implements Initializable {
 
     @FXML
     private void cancelModification(ActionEvent event) {
+    }
+       @FXML
+    private void closeWindow(ActionEvent event) {
+        javafx.application.Platform.exit();
+    }
+
+    @FXML
+    private void minimizeWindow(ActionEvent event) {
+         Stage stage=(Stage)miniButton.getScene().getWindow();
+        stage.setIconified(true);
     }
     
 }

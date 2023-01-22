@@ -26,6 +26,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -67,37 +68,42 @@ public class MainWindowController implements Initializable {
     private TextField bookId;
     @FXML
     private ListView<String> issueBookList;
+    @FXML
+    private Button miniButton;
+    @FXML
+    private Button closeButton;
         /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //it will create a shadow effect for a given node and a specified depth level. depth levels are {0,1,2,3,4,5}
+       //it will create a shadow effect for a given node and a specified depth level. depth levels are {0,1,2,3,4,5}
        JFXDepthManager.setDepth(book_info,1);
         JFXDepthManager.setDepth(member_info,1);
     } 
-           @FXML
+    //this methode is applied when the user click on "Add Book"  button it loads the addBookInterface
+    @FXML
     void addBook(ActionEvent event) {
         loadWindow("addBook/addBookInterface.fxml","Add Book");
     }
-
+   //this methode is applied when the user click on "Add Member"  button it loads the addMemberInterface
     @FXML
     void addMember(ActionEvent event) {
         loadWindow("addMember/addMemberInterface.fxml","Add member");
     }
-
+     //this methode is applied when the user click on "Viewing Book"  button it loads the bookViewing
     @FXML
     void showBookTable(ActionEvent event) {
         loadWindow("bookViewing/viewBook.fxml","Viewing Books");
 
     }
-
+    //this methode is applied when the user click on "Viewing Members"  button it loads the memberViewing
     @FXML
     void showMemberTable(ActionEvent event) {
         loadWindow("memberViewing/memberTableViewing.fxml","Viewing Member");
 
     }
-   
+   //this method is used to invoke any given interface that by providing the "FMXL file path" and give it a title to that interface(you can choose whatever you want as a title) 
     void loadWindow(String loc,String Title){
         try{
              Parent parent =FXMLLoader.load(getClass().getClassLoader().getResource(loc));
@@ -109,21 +115,11 @@ public class MainWindowController implements Initializable {
               Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
           }
         }
-    //we call it every time we call the loadBookInformation method to clear the previous book's information that we looked for before
-    private void clearBookCache(){
-        bookName.setText("");
-        bookAuthor.setText("");
-    }
-     //we call it every time we call the loadMemberInformation method to clear the previous book's information that we looked for before
-    private void clearMemberCache(){
-        memberName.setText("");
-        memberContact.setText("");
-    }
     //looking for a member in the database using its ID and then display the name and the author of it is the main dashbored
     @FXML
     private void loadMemberInformation(ActionEvent event) {
         //clearBookCache();
-         String MName="";
+        String MName="";
         String CName="";
         String id=memberIdInput.getText();
         String query="select* from members where id ='"+id+"'";
@@ -171,6 +167,7 @@ public class MainWindowController implements Initializable {
           }
 
     @FXML
+    //this method is applied when the user click on "issue" button,it make the book trun the state of the book in bbok table in the database "not Availble" other cannot issue it untile it's submitted and add it to the issuedBook table in the database 
     private void IssueBook(ActionEvent event) {
         Alert alter=new Alert(Alert.AlertType.CONFIRMATION);
         alter.setTitle("Confirme issue operation");
@@ -197,6 +194,7 @@ public class MainWindowController implements Initializable {
         }
 
     @FXML
+    //this method is used to vizulize all the information about any issued  book and the member that has been issued that book in a Viewing table in the "Renew/submission"Tap
     private void loadIssuedBook(ActionEvent event) {
         ObservableList<String>issueData=FXCollections.observableArrayList();
         String id=bookId.getText();
@@ -241,7 +239,7 @@ public class MainWindowController implements Initializable {
             JOptionPane.showMessageDialog(null, e);
         }
     }
-
+    //this methode is used  when the "submission" button is clicked,it delete the issued book from the "issuedbook" table in the database and trun the state of the deleted book into "Available"
     @FXML
     private void loadSubmission(ActionEvent event) {
         if(!isReadyForSubmission){
@@ -263,7 +261,7 @@ public class MainWindowController implements Initializable {
         }
         
     }
-
+    //this methode is called when the user click on the "Renew" button it increase the renew count by 1 and modify the data of issue
     @FXML
     private void renewBook(ActionEvent event) {
         if(!isReadyForSubmission){
@@ -294,6 +292,7 @@ public class MainWindowController implements Initializable {
         }
             
         }
+    //this method is called in the "issue" Tap when the user enter the book Id in the filed text and then press enter,this methode give the name and the auther for this book
     private void updateSubmession(){
         String bName="not Available";
         String aName="not Availble";
@@ -318,17 +317,16 @@ public class MainWindowController implements Initializable {
     }
 
     @FXML
-    private void closeHandel(ActionEvent event) {
-        //((Stage)rootPane.getScene().getWindow()).close();
+    private void minimizeWindow(ActionEvent event) {
+        Stage stage=(Stage)miniButton.getScene().getWindow();
+        stage.setIconified(true);
     }
 
     @FXML
-    private void deletHandel(ActionEvent event) {
+    private void closeWindow(ActionEvent event) {
+        javafx.application.Platform.exit();
     }
 
-    @FXML
-    private void handelHandel(ActionEvent event) {
-    }
         
         
     }

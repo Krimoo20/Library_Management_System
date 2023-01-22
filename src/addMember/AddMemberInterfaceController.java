@@ -12,7 +12,9 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
 /**
@@ -34,8 +36,12 @@ public class AddMemberInterfaceController implements Initializable {
     private TextField name;
      Connection conn =null;
     PreparedStatement pst = null;
-
-
+    @FXML
+    private Button miniButton;
+    @FXML
+    private Button closeButton;
+    
+    //this methode is called when the user clicks on the "Save" button it add a new Member to the database
     @FXML
     void addMember(ActionEvent event) {
            conn = dataBaseConnection.ConnectDb();
@@ -62,5 +68,16 @@ public class AddMemberInterfaceController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+   @FXML
+    private void closeWindow(ActionEvent event) {
+        javafx.application.Platform.exit();
+    }
+
+    @FXML
+    private void minimizeWindow(ActionEvent event) {
+         Stage stage=(Stage)miniButton.getScene().getWindow();
+        stage.setIconified(true);
+    }
     
 }

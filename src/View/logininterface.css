@@ -24,4 +24,18 @@
     -fx-border-width:0px 0px 1px 0px;
     -fx-border-color:#8146D1;
 }
+.minimize{
+    -fx-background-color:transparent;
+    -fx-cursor:hand;
+}
 
+.minimize:hover{
+    -fx-background-color:#5481ab;
+}
+.close{
+    -fx-background-color:transparent;
+    -fx-cursor:hand;
+}
+.close:hover{
+    -fx-background-color:#ed3528;
+}

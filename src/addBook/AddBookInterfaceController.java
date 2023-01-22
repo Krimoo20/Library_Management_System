@@ -12,7 +12,9 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 
 /**
@@ -34,12 +36,11 @@ public class AddBookInterfaceController implements Initializable {
     private TextField Title;
     Connection conn =null;
     PreparedStatement pst = null;
-
     @FXML
-    public void Cancel(ActionEvent event) {
-
-    }
-
+    private Button closeButton;
+    @FXML
+    private Button miniButton;
+    //this methode is called when the user clicks on the "Save" button it add a new book to the database
     @FXML
     public void addBook(ActionEvent event) {
         conn = dataBaseConnection.ConnectDb();
@@ -67,5 +68,16 @@ public class AddBookInterfaceController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void closeWindow(ActionEvent event) {
+        javafx.application.Platform.exit();
+    }
+
+    @FXML
+    private void minimizeWindow(ActionEvent event) {
+         Stage stage=(Stage)miniButton.getScene().getWindow();
+        stage.setIconified(true);
+    }
     
 }

@@ -74,7 +74,7 @@ public class ViewBookController implements Initializable {
              Logger.getLogger(ViewBookController.class.getName()).log(Level.SEVERE, null, ex);
          }
     }    
-
+    //this method when it is invoked it loads the data of the books  from the database to the view table element 
      private void loadData() throws SQLException {
         connection=dataBaseConnection.ConnectDb();
         idCol.setCellValueFactory(new PropertyValueFactory<>("ID"));
@@ -87,7 +87,7 @@ public class ViewBookController implements Initializable {
         connection.close();
         
     }
-
+     //this methode is used to delete a book directly from the viewing table insted of going to the database and delete the book from it 
     @FXML
     private void deleteBook(ActionEvent event) {
         book selected= viewingBook.getSelectionModel().getSelectedItem();
@@ -118,7 +118,7 @@ public class ViewBookController implements Initializable {
         alert2.setContentText("deletion cancelled");
         }
     }   
-
+ //this methode is used to modifiy the information of a book directly from the viewing table insted of going to the database and delete the book from it, by using an interface to do that 
     @FXML
     private void editBook(ActionEvent event) throws SQLException {
         book selected= viewingBook.getSelectionModel().getSelectedItem();

@@ -70,7 +70,7 @@ public class MemberTableViewingController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         loadData();
     }    
-
+  //this method when it is invoked it loads the data of the books  from the database to the view table element 
     private void loadData() {
          connection=dataBaseConnection.ConnectDb();
         idCol.setCellValueFactory(new PropertyValueFactory<>("ID"));
@@ -80,7 +80,7 @@ public class MemberTableViewingController implements Initializable {
         List=dataBaseConnection.getDataMembers();
         MemberViewing.setItems(List);
     }
-    
+    //this methode is used to delete a Member directly from the viewing table insted of going to the database and delete the Member from it
     @FXML
     private void deletMember(ActionEvent event) {
                Member selected= MemberViewing.getSelectionModel().getSelectedItem();
@@ -111,7 +111,7 @@ public class MemberTableViewingController implements Initializable {
         alert2.setContentText("deletion cancelled");
         }
     }
-
+    //this methode is used to modifiy the information of a Member directly from the viewing table insted of going to the database and delete the Member from it, by using an interface to do that
     @FXML
     private void EditMember(ActionEvent event) {
          Member selected= MemberViewing.getSelectionModel().getSelectedItem();
