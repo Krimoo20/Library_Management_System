@@ -72,7 +72,7 @@ public class MainWindowController implements Initializable {
     private Button miniButton;
     @FXML
     private Button closeButton;
-        /**
+       /**
      * Initializes the controller class.
      */
     @Override
@@ -324,7 +324,8 @@ public class MainWindowController implements Initializable {
 
     @FXML
     private void closeWindow(ActionEvent event) {
-        javafx.application.Platform.exit();
+        Stage stage=(Stage)closeButton.getScene().getWindow();
+        stage.close();
     }
 
         

@@ -130,7 +130,8 @@ public class LoginInterfaceController implements Initializable {
     //this methode is used to close the login window by the user from the close button
     @FXML
     private void closeWindow(ActionEvent event) {
-         javafx.application.Platform.exit();
+        Stage stage=(Stage)closeButton.getScene().getWindow();
+        stage.close();
     }
     
     //this methode is used to minimize the login window by the user from the minimize button

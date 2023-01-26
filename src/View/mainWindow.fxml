@@ -183,7 +183,7 @@
                         </ImageView>
                      </children>
                   </Pane>
-                      <Button mnemonicParsing="false" onAction="#addMember" prefHeight="120.0" prefWidth="294.0" styleClass="btn" stylesheets="@mainwindow.css" text="Add Member" textFill="WHITE">
+                      <Button fx:id="addMember" mnemonicParsing="false" onAction="#addMember" prefHeight="120.0" prefWidth="294.0" styleClass="btn" stylesheets="@mainwindow.css" text="Add Member" textFill="WHITE">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="18.0" />
                      </font>

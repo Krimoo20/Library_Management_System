@@ -100,7 +100,7 @@
                         <Font name="Arial Rounded MT Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#Cancel" prefHeight="66.0" prefWidth="250.0" styleClass="btn" stylesheets="@addbookinterface.css" text="Cancel" textFill="WHITE">
+                  <Button mnemonicParsing="false"  prefHeight="66.0" prefWidth="250.0" styleClass="btn" stylesheets="@addbookinterface.css" text="Cancel" textFill="WHITE">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="14.0" />
                      </font>

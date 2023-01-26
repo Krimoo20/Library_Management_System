@@ -100,7 +100,8 @@ public class EditBookController implements Initializable {
     }
        @FXML
     private void closeWindow(ActionEvent event) {
-        javafx.application.Platform.exit();
+       Stage stage=(Stage)closeButton.getScene().getWindow();
+        stage.close(); 
     }
 
     @FXML
