@@ -5,7 +5,6 @@ CREATE TABLE book(
     Auther varchar(30),
     Publisher varchar(30),
     Availble varchar(30),
-a
 );
 CREATE TABLE issuedbook(
      FOREIGN KEY (bookID) REFERENCES book(id) 
