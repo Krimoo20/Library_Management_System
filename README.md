@@ -16,3 +16,8 @@ this interface enable the user to add a new member to the library database of th
 ![add_book](https://user-images.githubusercontent.com/98287762/215115444-a63c166a-4b1c-4db4-b955-00d7a5ad42c8.png)
 
 this interface enable the user to add a new book to the database of the library
+
+
+![bookViewing](https://user-images.githubusercontent.com/98287762/215115915-404dc096-c267-4e04-8127-30ee8d75d478.png)
+
+this interface give the user the ability to see all the book and thier state (available,not available)
