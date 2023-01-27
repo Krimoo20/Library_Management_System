@@ -28,3 +28,8 @@ this interface give the user the ability to see all the book and thier state (av
 
 
  this interface give the user the ability to see all the member of the library  
+
+
+![edit_member](https://user-images.githubusercontent.com/98287762/215117574-26ad479f-2022-45c1-b85b-232f17f8e185.png)
+
+this interface enbales the user,in case of mistake in addation of the memeber, to edit his/her information
