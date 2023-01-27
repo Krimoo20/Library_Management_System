@@ -32,4 +32,9 @@ this interface give the user the ability to see all the book and thier state (av
 
 ![edit_member](https://user-images.githubusercontent.com/98287762/215117574-26ad479f-2022-45c1-b85b-232f17f8e185.png)
 
-this interface enbales the user,in case of mistake in addation of the memeber, to edit his/her information
+this interface enbales the user,in case of mistake in addation of a meember, to edit his/her information without coming back to the database and then edit it 
+
+
+![edit_book](https://user-images.githubusercontent.com/98287762/215118075-0abbe6d2-5baa-490b-93ea-ea130b59dcc7.png)
+
+this interface enbales the user,in case of mistake in addation of a book, to edit its information without coming back to the database and then edit it 
