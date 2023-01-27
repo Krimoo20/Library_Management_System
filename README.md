@@ -21,3 +21,8 @@ this interface enable the user to add a new book to the database of the library
 ![bookViewing](https://user-images.githubusercontent.com/98287762/215115915-404dc096-c267-4e04-8127-30ee8d75d478.png)
 
 this interface give the user the ability to see all the book and thier state (available,not available)
+
+
+
+![memberViewing](https://user-images.githubusercontent.com/98287762/215116229-0a42cdbc-07d3-4f39-9025-68581c887d42.png)
+ this interface give the user the ability to see all the member of the library  
