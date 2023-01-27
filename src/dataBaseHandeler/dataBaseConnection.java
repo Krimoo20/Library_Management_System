@@ -27,7 +27,6 @@ public class dataBaseConnection {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = (Connection) DriverManager.getConnection("jdbc:mysql://localhost/librarymanagementsystem","root","");
-            JOptionPane.showMessageDialog(null, "Connection Established");
             return conn;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);

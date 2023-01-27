@@ -186,7 +186,6 @@ public class MainWindowController implements Initializable {
             pst2 =(PreparedStatement)conn.prepareStatement(queryUpadte);
             pst2.execute();
             conn.close();
-            JOptionPane.showMessageDialog(null, "The book has been issued sucessfully!!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
@@ -254,7 +253,6 @@ public class MainWindowController implements Initializable {
             pst.execute();
             pst2 =(PreparedStatement)conn.prepareStatement(query2);
             pst2.execute();
-            JOptionPane.showMessageDialog(null, "The book has been submitted scessfully!!");
             conn.close();
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
@@ -285,7 +283,6 @@ public class MainWindowController implements Initializable {
             pst.execute();
             conn.close();
             updateSubmession();
-            JOptionPane.showMessageDialog(null, "The book has been issued sucessfully!!");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
         }
